@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          name="viewport"/>
+        
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta name="description" content="<%= config.description %>">
+    <meta name="keywords" content="<%= config.keywords %>">
+    <meta name="author" content="<%= config.title %>">
+
+    <title><%= config.title %> - <%= config.subtitle %></title>
+
+    <link href="./css/main.css" rel="stylesheet"/>
+
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <script src="./js/jquery.min.js"></script>
+
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/sweetalert.js"></script>
+</head>
+
+<body>
+
+<div class="nav">
+    <br/>
+    
+    <b>
+        <big> <%= config.title %> </big>
+
+        <a href="../../../../links" style="float: right">友情链接</a>
+        <a href="index.html" style="float: right">首页</a>
+    </b>
+</div>
+
+<div class="title">
+    <h1 style="color:#EE601E;margin-top: 30px;margin-bottom:0;">
+        <%= config.title %>
+    </h1>
+
+    <br/>
+
+    <h2 style="color:#fff;margin-top:8px;">
+        <%= config.subtitle %>
+    </h2>
+</div>
+
+<center>
+    <div class="blockb about">
+        <h2><%= config.author %></h2>
+        <h3>
+            <%= theme.about %>
+        </h3>
+    </div>
+</center>
+
+<% site.posts.forEach(function(post){ %>
+    <center>
+        <a href="/<%- post.path %>">
+            <div class="blockb" style="width: 50%;padding: 30px;">
+                <h2><%- post.title %></h2>
+                <h3>
+                    <%- new Date(post.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
+                </h3>
+            </div>
+        </a>
+    </center>
+<% }); %>
+
+<% if(site.posts.length === 1){ %>
+    <style>
+        .banquan{
+            margin-top: 220.6px;
+        }
+    </style>
+<% } %>
+
+<div class="banquan">
+    <hr />
+
+    <b id="banquan-time">&copy;2020～<span id="year">现在</span> <%= config.title %>
+        版权所有！</b>
+
+    <div class="ignore" style="width:100%;text-align:center;">
+        <span><a href="javascript:translate.changeLanguage('english');">English</a></span>|
+        <span><a href="javascript:translate.changeLanguage('chinese_simplified');">简体中文</a></span>|
+        <span><a href="javascript:translate.changeLanguage('chinese_traditional');">繁體中文</a></span>
+    </div>
+
+</div>
+
+<script src="./js/translate.js"></script>
+<script>
+    translate.language.setLocal('chinese_simplified');
+    translate.selectLanguageTag.show = false;
+    translate.service.use('client.edge');
+    translate.execute();
+</script>
+
+</body>
+</html>

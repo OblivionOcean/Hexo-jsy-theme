@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= config.title %> - <%= config.subtitle %></title>
+
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../../../../css/post.css" rel="stylesheet"/>
+
+    <script src="../../../../js/jquery.min.js"></script>
+
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="../../../../css/friend.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="nav">
+        <br/>
+
+        <b>
+            <big> <%= config.title %> </big>
+        
+            <a href="../../../../links" style="float: right">友情链接</a>
+            <a href="../../../../index.html" style="float: right">首页</a>
+        </b>
+    </div>
+
+    <center>
+        <div class="blockb about">
+            <h2><%= config.author %></h2>
+            <h3>
+                <%= theme.about %>
+            </h3>
+        </div>
+    </center>
+
+    <div class="content">
+        <div class="text blockb" style="margin-bottom: 10px;">
+            <h1><%- page.title %></h1>
+            <h4>
+                发布时间：<%- new Date(page.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
+                &nbsp;作者：<%- config.author %>
+            </h4>
+        </div>
+        <div class="text blockb" style="margin-top: 0px;text-align: left;align-items: left;padding: 50px;">
+            <%- page.content %>
+        </div>
+
+        <div class="banquan">
+            <hr />
+        
+            <b id="banquan-time">&copy;2020～<span id="year">现在</span> <%= config.title %>
+                版权所有！</b>
+        
+            <div class="ignore" style="width:100%;text-align:center;">
+                <span><a href="javascript:translate.changeLanguage('english');">English</a></span>|
+                <span><a href="javascript:translate.changeLanguage('chinese_simplified');">简体中文</a></span>|
+                <span><a href="javascript:translate.changeLanguage('chinese_traditional');">繁體中文</a></span>
+            </div>
+        
+        </div>
+    </div>
+    
+    <script src="../../../../js/translate.js"></script>
+    <script>
+        translate.language.setLocal('chinese_simplified');
+        translate.selectLanguageTag.show = false;
+        translate.service.use('client.edge');
+        translate.execute();
+    </script>
+
+    <script src="../../../../js/post.js"></script>
+</body>
+</html>
