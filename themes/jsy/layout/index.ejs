@@ -59,16 +59,16 @@
 </center>
 
 <% site.posts.forEach(function(post){ %>
-    <center>
+    
         <a href="/<%- post.path %>">
-            <div class="blockb" style="width: 50%;padding: 30px;">
+            <div class="blockb" style="width: 50%;padding: 30px;margin-left: 40px;">
                 <h2><%- post.title %></h2>
                 <h3>
                     <%- new Date(post.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
                 </h3>
             </div>
         </a>
-    </center>
+    
 <% }); %>
 
 <% if(site.posts.length === 1){ %>
