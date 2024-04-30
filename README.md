@@ -25,7 +25,7 @@
 
 1.  Clone步骤：本仓库是一个JSY主题的博客示例，你可以选择仅使用theme文件夹内的主题，也可以选择使用整个仓库并修改
 2.  首先修改`/_config.yml`中的内容，设置`theme: jsy`，设置`title: 博客名称`，设置`subtitle: 副标题`，设置`description：博客介绍`，设置`author: 你的名字`
-3. 接着找到`/_config.jsy.yml`（注意是根目录下的那个），设置`about: 你的个人介绍`
+3. 接着找到`/_config.jsy.yml`（注意是根目录下的那个），设置`about: 你的个人介绍`和`avatar: 你的头像链接`
 4. 然后找到`/source/links/index.md`，按照下述格式添加友链：
 
 ```yml
