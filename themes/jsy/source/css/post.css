@@ -63,7 +63,7 @@ html, body {
     text-align: center;
     align-items: center;
     margin-top: 80px;
-    width: 65%;
+    width: 75%;
     background-color: white;
     border: 2px solid #D6DBDC;
     padding: 20px;
@@ -71,9 +71,9 @@ html, body {
 
 .about{
     position: absolute;
-    width: 30%;
+    width: 20%;
     height: auto;
-    padding: 30px;
+    padding: 40px;
     top: 100px;
     right: 10px;
 }

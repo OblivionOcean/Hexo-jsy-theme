@@ -96,9 +96,22 @@ html, body {
 
 .about{
     position: absolute;
-    width: 30%;
+    width: 20%;
     height: auto;
-    padding: 30px;
+    padding: 40px;
     top: 350px;
     right: 10px;
+}
+
+.post_card{
+    width: 80%;
+    height: 180px;
+    padding: 30px;
+    padding-top: 0;
+}
+
+.avatar{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
 }

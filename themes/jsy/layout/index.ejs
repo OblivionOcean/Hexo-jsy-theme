@@ -38,6 +38,8 @@
 </div>
 
 <div class="title">
+    <img src="<%= theme.avatar %>" class="avatar" />
+
     <h1 style="color:#EE601E;margin-top: 30px;margin-bottom:0;">
         <%= config.title %>
     </h1>
@@ -49,26 +51,43 @@
     </h2>
 </div>
 
-<center>
+<!-- <center>
     <div class="blockb about">
         <h2><%= config.author %></h2>
         <h3>
             <%= theme.about %>
         </h3>
     </div>
-</center>
+</center> -->
 
-<% site.posts.forEach(function(post){ %>
-    
+<% var i = 2; %>
+<% site.posts.forEach(function(post) { %>
+    <center>
         <a href="/<%- post.path %>">
-            <div class="blockb" style="width: 50%;padding: 30px;margin-left: 40px;">
-                <h2><%- post.title %></h2>
-                <h3>
-                    <%- new Date(post.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
-                </h3>
+            <div class="blockb post_card">
+                <% if (i % 2 === 1) { %>
+                    <img style="float: left; margin-left: 10px; margin-top: 10px; border-radius: 10px;" width="50%" height="160px" src="<%- post.cover %>" />
+                    <div style="float: right; margin-right: 10%; margin-top: 30px;">
+                        <h2><%- post.title %></h2>
+                        <h3>
+                            <%- new Date(post.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
+                        </h3>
+                    </div>
+                <% } %>
+
+                <% if (i % 2 === 0) { %>
+                    <img style="float: right; margin-right: 10px; margin-top: 10px; border-radius: 10px;" width="50%" height="160px" src="<%- post.cover %>" />
+                    <div style="float: left; margin-left: 10%; margin-top: 30px;">
+                        <h2><%- post.title %></h2>
+                        <h3>
+                            <%- new Date(post.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
+                        </h3>
+                    </div>
+                <% } %>
             </div>
         </a>
-    
+    </center>
+<% i++; %>
 <% }); %>
 
 <% if(site.posts.length === 1){ %>
