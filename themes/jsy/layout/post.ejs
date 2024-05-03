@@ -26,41 +26,45 @@
         </b>
     </div>
 
-    <center>
+    <!-- <center>
         <div class="blockb about">
             <h2><%= config.author %></h2>
             <h3>
                 <%= theme.about %>
             </h3>
         </div>
-    </center>
+    </center> -->
 
-    <div class="content">
-        <div class="text blockb" style="margin-bottom: 10px;">
-            <h1><%- page.title %></h1>
-            <h4>
-                发布时间：<%- new Date(page.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
-                &nbsp;作者：<%- config.author %>
-            </h4>
-        </div>
-        <div class="text blockb" style="margin-top: 0px;text-align: left;align-items: left;padding: 50px;">
-            <%- page.content %>
-        </div>
-
-        <div class="banquan">
-            <hr />
-        
-            <b id="banquan-time">&copy;2020～<span id="year">现在</span> <%= config.title %>
-                版权所有！</b>
-        
-            <div class="ignore" style="width:100%;text-align:center;">
-                <span><a href="javascript:translate.changeLanguage('english');">English</a></span>|
-                <span><a href="javascript:translate.changeLanguage('chinese_simplified');">简体中文</a></span>|
-                <span><a href="javascript:translate.changeLanguage('chinese_traditional');">繁體中文</a></span>
+    <center>
+        <div class="content">
+            <div class="text blockb" style="margin-bottom: 10px;">
+                <h1><%- page.title %></h1>
+                <h4 style="margin-top: 25px;">
+                    发布时间：<%- new Date(page.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
+                    &nbsp;作者：<%- config.author %>
+                    <br/><br/>字数：<%- page.raw.replace(" ","").replace("\n","").length %>
+                    &nbsp;阅读时长：<%- Math.round(page.raw.length/450) %>分钟
+                </h4>
             </div>
-        
+            <div class="text blockb" style="margin-top: 0px;text-align: left;align-items: left;padding: 50px;">
+                <%- page.content %>
+            </div>
+
+            <div class="banquan">
+                <hr />
+            
+                <b id="banquan-time">&copy;2020～<span id="year">现在</span> <%= config.title %>
+                    版权所有！</b>
+            
+                <div class="ignore" style="width:100%;text-align:center;">
+                    <span><a href="javascript:translate.changeLanguage('english');">English</a></span>|
+                    <span><a href="javascript:translate.changeLanguage('chinese_simplified');">简体中文</a></span>|
+                    <span><a href="javascript:translate.changeLanguage('chinese_traditional');">繁體中文</a></span>
+                </div>
+            
+            </div>
         </div>
-    </div>
+    </center>
     
     <script src="../../../../js/translate.js"></script>
     <script>
