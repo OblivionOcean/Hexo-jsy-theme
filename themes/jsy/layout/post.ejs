@@ -777,8 +777,8 @@
                 <h4 style="margin-top: 25px;">
                     发布时间：<%- new Date(page.date).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\//g, '-').replace(',', '') %>
                     &nbsp;作者：<%- config.author %>
-                    <br/><br/>字数：<%- page.raw.replace(" ","").replace("\n","").length %>
-                    &nbsp;阅读时长：<%- Math.round(page.raw.length/450) %>分钟
+                    <br/><br/>字数：<%- wordcount(page.content) %>字
+                    &nbsp;阅读时长：<%- min2read(page.content) %>分钟
                 </h4>
             </div>
             <div class="text blockb" style="margin-top: 0px;text-align: left;align-items: left;padding: 50px;">
